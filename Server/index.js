@@ -10,24 +10,35 @@ app.use(cors());
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", // Fixed CORS origin
+    origin: "https://trading-visualizer-websocket.vercel.app/", // Fixed CORS origin
     methods: ["GET", "POST"],
   },
 });
 
 const PORT = 5100;
 
-// List of currencies
-const symbols = ["BTCUSDT", "ETHUSDT", "BNBUSDT"];
+// List of symbols
+const symbols = ["BTCUSDT", "ETHUSDT", "BNBUSDT","SOLUSDT"];
 
+// Function to fetch trading data
 const fetchTradingData = async (symbol) => {
   try {
-    console.log(`Fetching data for ${symbol}...`); // Debugging line
+    console.log(`Fetching data for ${symbol}...`);
+    
+    // Fetch 24h ticker data from Binance API
     const response = await axios.get(
-      `https://api.binance.com/api/v3/ticker/price?symbol=${symbol}`
+      `https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`
     );
-    console.log(`Data received for ${symbol}:`, response.data); // Debugging line
-    return response.data;
+
+    console.log(`Data received for ${symbol}:`, response.data);
+
+    return {
+      symbol,
+      price: parseFloat(response.data.lastPrice), // Current price
+      change24h: parseFloat(response.data.priceChangePercent), // 24h percentage change
+      volume24h: parseFloat(response.data.volume), // 24h volume
+      high24h: parseFloat(response.data.highPrice), // 24h highest price
+    };
   } catch (error) {
     console.error(`Error fetching ${symbol} data:`, error.message);
     return null;
@@ -39,7 +50,7 @@ setInterval(async () => {
   for (const symbol of symbols) {
     const data = await fetchTradingData(symbol);
     if (data) {
-      console.log(`Emitting data:`, data); // Debugging line
+      console.log(`Emitting data:`, data);
       io.emit("tradingData", data);
     }
   }
@@ -47,8 +58,7 @@ setInterval(async () => {
 
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  
-  // Handle WebSocket connections after the server starts
+
   io.on("connection", (socket) => {
     console.log("New client connected");
 

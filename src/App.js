@@ -1,12 +1,14 @@
 
 import './App.css';
-import Interface from './Components/Interface';
+import Interfacce from './Components/Interface';
+// import StockDashboard from './Components/Interface';
+ 
 import React from 'react';
 
 function App() {
   return (
     <div className="App">
-       <Interface/>
+       <Interfacce/>
     </div>
   );
 }
