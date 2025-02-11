@@ -10,9 +10,12 @@ app.use(cors());
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "*", // Fixed CORS origin
+    origin: "*",
     methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+    credentials: true,
   },
+  transports: ["websocket", "polling"],
 });
 
 const PORT = 5100;

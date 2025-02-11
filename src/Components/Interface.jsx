@@ -12,7 +12,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
-const socket = io("https://trading-backend-ccs7.onrender.com");
+const socket = io("https://trading-backend-ccs7.onrender.com", {
+  transports: ["polling"],
+});
+
 
 const symbols = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT"];
 const symbolNames = {
