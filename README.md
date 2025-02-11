@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# 📈 Live Stock Market Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A real-time stock market dashboard built with **React, Chart.js, and Socket.io**. This application provides **live price updates, historical trends, and key trading stats** for major cryptocurrencies like **Bitcoin, Ethereum, Binance Coin, and Solana**.
 
-## Available Scripts
+## 🎯 Project Objectives
+- **Real-Time Updates:** Fetch and display live stock prices using WebSockets.
+- **Historical Data Visualization:** Display price trends using interactive **Line Charts (Chart.js)**.
+- **Multiple Cryptocurrency Support:** Monitor Bitcoin (BTC), Ethereum (ETH), Binance Coin (BNB), and Solana (SOL).
+- **Performance & Optimization:** Efficiently handle price updates without performance lag.
+- **User-Friendly UI:** Responsive Bootstrap 5 layout with **dynamic UI components**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🛠️ Tech Stack
+- **Frontend:** React, Chart.js, Bootstrap 5, FontAwesome
+- **Backend:** Node.js, Express, Socket.io
+- **WebSocket Server:** Provides real-time price updates
+- **API Integration:** Fetches live market data from a trading API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+### 🔹 Clone the Repository
+```sh
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔹 Install Dependencies
+```sh
+npm install
+```
 
-### `npm run build`
+### 🔹 Start the React App
+```sh
+npm start
+```
+Your app will run on **http://localhost:3000/** 🚀
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🖥️ Setting Up the Server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔹 Navigate to the Server Directory
+```sh
+cd server
+```
 
-### `npm run eject`
+### 🔹 Install Server Dependencies
+```sh
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔹 Start the Server
+```sh
+node server.js
+```
+Your WebSocket server will run on **http://localhost:5100/** 📡
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📊 How It Works
+1. Select a cryptocurrency from the buttons (BTC, ETH, BNB, SOL).
+2. View **real-time prices**, **24h price change**, **trading volume**, and **high price**.
+3. The **line chart updates dynamically** as new data arrives.
+4. Backend uses **Socket.io** to push live updates to the React frontend.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## ☕ Buy Me a Coffee
+If you like this project, consider **buying me a coffee** to support my work! ❤️
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/udaysolanki)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### 💡 Feel free to contribute and enhance this project! 🚀
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
